@@ -8,18 +8,25 @@ export function LangSwitcher() {
 
     if (!pathName) return null
 
-    const targetLang = pathName.startsWith('/th') ? 'en' : 'th'
-
-    // Replaces the /en or /th at the start of the pathname
-    const redirectTarget = pathName.replace(/^\/[a-z]{2}/, `/${targetLang}`)
+    const currentLang = pathName.startsWith('/th') ? 'th' : 'en'
 
     return (
-        <Link
-            href={redirectTarget}
-            className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary/50 px-3 py-2 text-sm font-medium transition-all hover:bg-secondary"
-            title={`Switch to ${targetLang === 'th' ? 'Thai' : 'English'}`}
-        >
-            {targetLang === 'th' ? '🇹🇭 TH' : '🇬🇧 EN'}
-        </Link>
+        <div className="flex items-center gap-2 text-sm font-semibold" style={{ fontFamily: "var(--font-heading)" }}>
+            <Link
+                href={pathName.replace(/^\/[a-z]{2}/, '/en')}
+                className={`transition-colors hover:text-primary ${currentLang === 'en' ? 'text-primary' : 'text-muted-foreground'}`}
+                title="Switch to English"
+            >
+                EN
+            </Link>
+            <span className="text-muted-foreground/30 font-light">|</span>
+            <Link
+                href={pathName.replace(/^\/[a-z]{2}/, '/th')}
+                className={`transition-colors hover:text-primary ${currentLang === 'th' ? 'text-primary' : 'text-muted-foreground'}`}
+                title="Switch to Thai"
+            >
+                TH
+            </Link>
+        </div>
     )
 }
