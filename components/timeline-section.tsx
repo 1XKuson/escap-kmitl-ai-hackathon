@@ -1,56 +1,55 @@
 import { Rocket, Filter, Users, Award, Trophy } from "lucide-react"
 
-const timelineSteps = [
-  {
-    month: "March 2026",
-    title: "Global Launch",
-    description: "Onboard talent and set technical benchmarks. Round 1 open call begins.",
-    icon: Rocket,
-    status: "active" as const,
-  },
-  {
-    month: "April 2026",
-    title: "Round 1 Shortlist",
-    description: "Selection of the Top 20 teams based on technical functionality.",
-    icon: Filter,
-    status: "upcoming" as const,
-  },
-  {
-    month: "May 2026",
-    title: "Midpoint Review",
-    description: "Virtual mentoring and online workshops with UN/KMITL experts.",
-    icon: Users,
-    status: "upcoming" as const,
-  },
-  {
-    month: "August 2026",
-    title: "Round 2 Shortlist",
-    description: "Selection of the Top 5 \"policy-ready\" teams.",
-    icon: Award,
-    status: "upcoming" as const,
-  },
-  {
-    month: "September 2026",
-    title: "Grand Finale",
-    description: "Onsite 3-hour 'Live Hack' and pitch demonstration of winning prototypes.",
-    icon: Trophy,
-    status: "upcoming" as const,
-  },
-]
-
-export function TimelineSection() {
+export function TimelineSection({ dict }: { dict: any }) {
+  const timelineSteps = [
+    {
+      month: dict.step1_month,
+      title: dict.step1_title,
+      description: dict.step1_desc,
+      icon: Rocket,
+      status: "active" as const,
+    },
+    {
+      month: dict.step2_month,
+      title: dict.step2_title,
+      description: dict.step2_desc,
+      icon: Filter,
+      status: "upcoming" as const,
+    },
+    {
+      month: dict.step3_month,
+      title: dict.step3_title,
+      description: dict.step3_desc,
+      icon: Users,
+      status: "upcoming" as const,
+    },
+    {
+      month: dict.step4_month,
+      title: dict.step4_title,
+      description: dict.step4_desc,
+      icon: Award,
+      status: "upcoming" as const,
+    },
+    {
+      month: dict.step5_month,
+      title: dict.step5_title,
+      description: dict.step5_desc,
+      icon: Trophy,
+      status: "upcoming" as const,
+    },
+  ]
   return (
     <section id="timeline" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
-            Project Timeline
+            {dict.tagline}
           </p>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Your Roadmap to the Finale
+            {dict.title}
           </h2>
         </div>
 
@@ -63,16 +62,14 @@ export function TimelineSection() {
               <div key={step.month} className="relative flex flex-col items-center text-center">
                 {/* Dot on the line */}
                 <div
-                  className={`relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 transition-all ${
-                    step.status === "active"
+                  className={`relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 transition-all ${step.status === "active"
                       ? "border-primary bg-primary/10"
                       : "border-border bg-card"
-                  }`}
+                    }`}
                 >
                   <step.icon
-                    className={`h-8 w-8 ${
-                      step.status === "active" ? "text-primary" : "text-muted-foreground"
-                    }`}
+                    className={`h-8 w-8 ${step.status === "active" ? "text-primary" : "text-muted-foreground"
+                      }`}
                   />
                 </div>
                 {/* Step number */}
@@ -100,16 +97,14 @@ export function TimelineSection() {
             <div key={step.month} className="flex gap-4">
               <div className="flex flex-col items-center">
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-full border-2 shrink-0 ${
-                    step.status === "active"
+                  className={`flex h-12 w-12 items-center justify-center rounded-full border-2 shrink-0 ${step.status === "active"
                       ? "border-primary bg-primary/10"
                       : "border-border bg-card"
-                  }`}
+                    }`}
                 >
                   <step.icon
-                    className={`h-5 w-5 ${
-                      step.status === "active" ? "text-primary" : "text-muted-foreground"
-                    }`}
+                    className={`h-5 w-5 ${step.status === "active" ? "text-primary" : "text-muted-foreground"
+                      }`}
                   />
                 </div>
                 {index < timelineSteps.length - 1 && (

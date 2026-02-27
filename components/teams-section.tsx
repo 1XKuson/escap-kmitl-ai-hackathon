@@ -1,21 +1,21 @@
 import { Code, Scale, Users } from "lucide-react"
 
-export function TeamsSection() {
+export function TeamsSection({ dict }: { dict: any }) {
   return (
     <section id="teams" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
-            Team Composition
+            {dict.tagline}
           </p>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Where Code Meets Law
+            {dict.title}
           </h2>
           <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed">
-            Teams must be multidisciplinary and consist of at least 3 members. You need a blend of technical and policy expertise.
+            {dict.subtitle}
           </p>
         </div>
 
@@ -25,10 +25,10 @@ export function TeamsSection() {
               <Code className="h-7 w-7 text-primary" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              Technical
+              {dict.tech_title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              AI/ML Architecture, Python, Data Processing. Handle data scraping, HtmlRAG, and model orchestration.
+              {dict.tech_desc}
             </p>
           </div>
 
@@ -37,10 +37,10 @@ export function TeamsSection() {
               <Scale className="h-7 w-7 text-escap-blue" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              Policy
+              {dict.policy_title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Trade Law, Economics, Regulatory Frameworks. Ensure solutions address real policy needs and accurate legal interpretation.
+              {dict.policy_desc}
             </p>
           </div>
 
@@ -49,10 +49,10 @@ export function TeamsSection() {
               <Users className="h-7 w-7 text-cmkl-crimson" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              3+ Members
+              {dict.members_title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Multidisciplinary teams are required. Open to students and developers worldwide.
+              {dict.members_desc}
             </p>
           </div>
         </div>

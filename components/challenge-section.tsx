@@ -1,19 +1,19 @@
 import { AlertTriangle, FileWarning, Crosshair, Database, Tag, FileText } from "lucide-react"
 
-export function ChallengeSection() {
+export function ChallengeSection({ dict }: { dict: any }) {
   return (
     <section id="challenge" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-cmkl-crimson font-semibold mb-3">
-            The Challenge
+            {dict.tagline}
           </p>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            The Governance Gap
+            {dict.title}
           </h2>
         </div>
 
@@ -24,11 +24,10 @@ export function ChallengeSection() {
               <AlertTriangle className="h-10 w-10 text-cmkl-crimson/70 group-hover:text-cmkl-crimson transition-colors" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-              Speed of Trade vs. Speed of Law
+              {dict.speed_title}
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Digital data flows exceed 50 TB/s while national policy adaptation cycles remain trapped
-              in a manual, 20th-century update process spanning years or decades.
+              {dict.speed_desc}
             </p>
           </div>
 
@@ -37,11 +36,10 @@ export function ChallengeSection() {
               <FileWarning className="h-10 w-10 text-cmkl-crimson/70 group-hover:text-cmkl-crimson transition-colors" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-              {"The \"Shredded Map\" Reality"}
+              {dict.shredded_title}
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Regulatory data is locked in unstructured formats. Standard AI treats it as
-              plain text, destroying logical hierarchy and leading to legal hallucinations.
+              {dict.shredded_desc}
             </p>
           </div>
 
@@ -50,10 +48,10 @@ export function ChallengeSection() {
               <Crosshair className="h-10 w-10 text-primary/70 group-hover:text-primary transition-colors" />
             </div>
             <h3 className="text-xl font-bold text-primary mb-4" style={{ fontFamily: "var(--font-heading)" }}>
-              The Objective
+              {dict.objective_title}
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              {"Build a modular AI tool (Automated Regulatory Engine) that intelligently identifies, classifies, and summarizes digital trade regulatory provisions."}
+              {dict.objective_desc}
             </p>
           </div>
         </div>
@@ -66,25 +64,25 @@ export function ChallengeSection() {
               className="text-xl sm:text-2xl font-bold text-foreground inline-block px-6 bg-background rounded-full border border-border py-2 max-w-full break-words"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Focus Areas: <span className="text-escap-blue">High-Impact Policy</span>
+              {dict.focus_areas} <span className="text-escap-blue">{dict.focus_highlight}</span>
             </h3>
           </div>
           <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-24">
             <div className="flex-1 max-w-sm mx-auto text-center md:text-right group">
               <span className="inline-block px-4 py-1.5 rounded-full bg-escap-blue/5 text-escap-blue text-xs font-bold uppercase tracking-wider mb-5 transition-colors group-hover:bg-escap-blue/10">Pillar 6</span>
-              <h4 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Cross-Border Data Policies</h4>
+              <h4 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>{dict.pillar6_title}</h4>
               <ul className="flex flex-col gap-3 text-muted-foreground text-sm">
                 <li className="flex items-center md:justify-end gap-3 justify-center">
                   <span className="md:order-last h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Ban & local processing requirements
+                  {dict.pillar6_1}
                 </li>
                 <li className="flex items-center md:justify-end gap-3 justify-center">
                   <span className="md:order-last h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Data localization mandates
+                  {dict.pillar6_2}
                 </li>
                 <li className="flex items-center md:justify-end gap-3 justify-center">
                   <span className="md:order-last h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Conditional flow regimes
+                  {dict.pillar6_3}
                 </li>
               </ul>
             </div>
@@ -93,19 +91,19 @@ export function ChallengeSection() {
             </div>
             <div className="flex-1 max-w-sm mx-auto text-center md:text-left group">
               <span className="inline-block px-4 py-1.5 rounded-full bg-escap-blue/5 text-escap-blue text-xs font-bold uppercase tracking-wider mb-5 transition-colors group-hover:bg-escap-blue/10">Pillar 7</span>
-              <h4 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Domestic Data Protection</h4>
+              <h4 className="text-xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>{dict.pillar7_title}</h4>
               <ul className="flex flex-col gap-3 text-muted-foreground text-sm">
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Legal framework gaps
+                  {dict.pillar7_1}
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Mandatory data retention periods
+                  {dict.pillar7_2}
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-escap-blue/50 shrink-0" />
-                  Compliance costs
+                  {dict.pillar7_3}
                 </li>
               </ul>
             </div>
@@ -118,7 +116,7 @@ export function ChallengeSection() {
             className="text-2xl md:text-3xl font-bold text-foreground mb-20 text-center"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            The Solution: <span className="text-primary">HtmlRAG & Structural Intelligence</span>
+            {dict.solution_title} <span className="text-primary">{dict.solution_highlight}</span>
           </h3>
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 relative max-w-5xl mx-auto">
             {/* Connecting line */}
@@ -128,27 +126,27 @@ export function ChallengeSection() {
               <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
                 <Database className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE A</span>
-              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Extraction</h4>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Detect passages with accurate source-grounded citations.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">{dict.mod_a_title}</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>{dict.mod_a_name}</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">{dict.mod_a_desc}</p>
             </div>
 
             <div className="flex-1 flex flex-col items-center text-center group">
               <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
                 <Tag className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE B</span>
-              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Classification</h4>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Assign provisions to appropriate policy categories.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">{dict.mod_b_title}</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>{dict.mod_b_name}</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">{dict.mod_b_desc}</p>
             </div>
 
             <div className="flex-1 flex flex-col items-center text-center group">
               <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
                 <FileText className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE C</span>
-              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Summarization</h4>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Generate concise summaries for non-technical officials.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">{dict.mod_c_title}</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>{dict.mod_c_name}</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">{dict.mod_c_desc}</p>
             </div>
           </div>
         </div>

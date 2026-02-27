@@ -1,21 +1,21 @@
 import { ArrowRight, FileText, Video } from "lucide-react"
 
-export function ApplySection() {
+export function ApplySection({ dict }: { dict: any }) {
   return (
     <section id="apply" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
-            How to Apply
+            {dict.tagline}
           </p>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Round 1: Global Open Call
+            {dict.title}
           </h2>
           <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed">
-            In Round 1, prototype development is not required. To accept the challenge, your team must submit:
+            {dict.subtitle}
           </p>
         </div>
 
@@ -25,13 +25,13 @@ export function ApplySection() {
               <FileText className="h-6 w-6 text-primary" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-              5-Slide Pitch Deck
+              {dict.pitch_title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Clearly present the problem, your proposed RegTech solution, use of AI/LLMs, and expected impact.
+              {dict.pitch_desc}
             </p>
             <span className="inline-block rounded-md bg-secondary px-3 py-1 text-xs text-muted-foreground">
-              PDF Format - In English
+              {dict.pitch_format}
             </span>
           </div>
 
@@ -40,13 +40,13 @@ export function ApplySection() {
               <Video className="h-6 w-6 text-primary" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-              7-Minute Video
+              {dict.video_title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Explain the problem context and your solution concept. Showcase your team and their expertise.
+              {dict.video_desc}
             </p>
             <span className="inline-block rounded-md bg-secondary px-3 py-1 text-xs text-muted-foreground">
-              Video Presentation - In English
+              {dict.video_format}
             </span>
           </div>
         </div>
@@ -56,11 +56,11 @@ export function ApplySection() {
             href="mailto:hackathon@unescap.org"
             className="glow-pulse inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-primary-foreground transition-all hover:brightness-110"
           >
-            Register Team & Download Datasets
+            {dict.btn}
             <ArrowRight className="h-5 w-5" />
           </a>
           <p className="mt-4 text-xs text-muted-foreground">
-            Contact us at{" "}
+            {dict.contact}{" "}
             <a href="mailto:hackathon@unescap.org" className="text-escap-blue hover:underline">
               hackathon@unescap.org
             </a>

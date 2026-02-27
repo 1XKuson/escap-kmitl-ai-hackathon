@@ -4,17 +4,19 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 
-const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Challenge", href: "/#challenge" },
-  { label: "Timeline", href: "/#timeline" },
-  { label: "Prizes", href: "/#prizes" },
-  { label: "Teams", href: "/#teams" },
-  { label: "FAQ", href: "/#faq" },
-]
+import { LangSwitcher } from "./lang-switcher"
 
-export function Navbar() {
+export function Navbar({ dict }: { dict?: any }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const navLinks = [
+    { label: dict?.about || "About", href: "/about" },
+    { label: dict?.challenge || "Challenge", href: "/#challenge" },
+    { label: dict?.timeline || "Timeline", href: "/#timeline" },
+    { label: dict?.prizes || "Prizes", href: "/#prizes" },
+    { label: dict?.teams || "Teams", href: "/#teams" },
+    { label: dict?.faq || "FAQ", href: "/#faq" },
+  ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
@@ -60,18 +62,20 @@ export function Navbar() {
               </a>
             ))}
             <div className="flex items-center gap-4">
+              <LangSwitcher />
               <ThemeToggle />
               <a
                 href="#apply"
                 className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
               >
-                Register Now
+                {dict?.register || "Register Now"}
               </a>
             </div>
           </div>
 
           {/* Mobile toggle */}
           <div className="flex items-center gap-2 md:hidden">
+            <LangSwitcher />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -103,7 +107,7 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 mt-2"
             >
-              Register Now
+              {dict?.register || "Register Now"}
             </a>
           </div>
         </div>

@@ -119,7 +119,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:lang(th) {
+  --font-sans: var(--font-noto-sans-thai), 'Noto Sans Thai', system-ui, sans-serif !important;
+  --font-heading: var(--font-noto-sans-thai), 'Noto Sans Thai', sans-serif !important;
 }

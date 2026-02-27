@@ -1,4 +1,4 @@
-export function MentorsSection() {
+export function MentorsSection({ dict }: { dict: any }) {
     const mentors = [
         {
             img: "/placeholder-user.jpg",
@@ -35,13 +35,13 @@ export function MentorsSection() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
-                        Expert Panel
+                        {dict.tagline}
                     </p>
                     <h2
                         className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
-                        Mentors & <span className="text-primary">Judges</span>
+                        {dict.title_1} <span className="text-primary">{dict.title_2}</span>
                     </h2>
                 </div>
 

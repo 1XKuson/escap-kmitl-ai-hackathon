@@ -1,6 +1,6 @@
 import { Mail, Globe } from "lucide-react"
 
-export function Footer() {
+export function Footer({ dict }: { dict: any }) {
   return (
     <footer className="border-t border-border bg-card">
       {/* Partners & Sponsors */}
@@ -9,7 +9,7 @@ export function Footer() {
           className="text-lg font-bold text-foreground text-center mb-8"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Partners & Organizers
+          {dict.partners}
         </h3>
         <div className="flex items-center justify-center gap-16 md:gap-24 flex-wrap">
           <img
@@ -36,10 +36,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center md:items-start gap-2">
               <span className="text-lg font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
-                RegTech AI Hackathon 2026
+                {dict.title}
               </span>
               <span className="text-xs text-muted-foreground">
-                Organized by UNESCAP & KMITL
+                {dict.organized_by}
               </span>
             </div>
 
@@ -65,7 +65,7 @@ export function Footer() {
 
           <div className="mt-8 pt-6 border-t border-border text-center">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} RegTech Structural Intelligence AI Hackathon. All rights reserved.
+              &copy; {new Date().getFullYear()} {dict.rights}
             </p>
           </div>
         </div>

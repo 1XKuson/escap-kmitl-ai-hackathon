@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar, Globe } from "lucide-react"
 
-export function HeroSection() {
+export function HeroSection({ dict }: { dict: any }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-16" style={{
       backgroundImage: `url('/hero-bg.jpg')`,
@@ -31,7 +31,7 @@ export function HeroSection() {
 
         {/* Tagline */}
         <p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-6">
-          AI Hackathon 2026
+          {dict.tagline}
         </p>
 
         {/* Main headline */}
@@ -39,23 +39,22 @@ export function HeroSection() {
           className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 break-words"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Pioneering the
+          {dict.title_1}
           <br className="hidden sm:block" />
-          <span className="text-primary"> AI Frontier</span>{" "}
+          <span className="text-primary">{dict.title_2}</span>{" "}
           <br className="sm:hidden" />
-          in RegTech
+          {dict.title_3}
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed text-pretty">
-          Bridging the Governance Gap in Digital Trade & Sustainable Development.
-          Build AI tools that transform how governments monitor complex regulations.
+          {dict.subtitle}
         </p>
 
         {/* Date */}
         <div className="flex items-center justify-center gap-2 mb-10">
           <Calendar className="h-4 w-4 text-primary" />
-          <span className="text-sm text-muted-foreground">March - September 2026</span>
+          <span className="text-sm text-muted-foreground">{dict.date}</span>
         </div>
 
         {/* CTA buttons */}
@@ -64,14 +63,14 @@ export function HeroSection() {
             href="#apply"
             className="glow-pulse inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground transition-all hover:brightness-110"
           >
-            Register Team & Download Datasets
+            {dict.btn_register}
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
             href="#about"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-secondary/50 px-8 py-3.5 text-base font-medium text-foreground transition-all hover:bg-secondary"
           >
-            Learn More
+            {dict.btn_learn}
           </a>
         </div>
 
