@@ -61,12 +61,14 @@ export function ChallengeSection() {
         {/* Focus Areas */}
         <div className="mb-24 relative">
           <div className="absolute inset-x-0 top-10 h-px bg-gradient-to-r from-transparent via-border to-transparent -z-10 hidden md:block"></div>
-          <h3
-            className="text-2xl font-bold text-foreground mb-12 text-center w-max mx-auto px-6 bg-background rounded-full border border-border py-2"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Focus Areas: <span className="text-escap-blue">High-Impact Policy</span>
-          </h3>
+          <div className="text-center mb-12 relative z-10">
+            <h3
+              className="text-xl sm:text-2xl font-bold text-foreground inline-block px-6 bg-background rounded-full border border-border py-2 max-w-full break-words"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Focus Areas: <span className="text-escap-blue">High-Impact Policy</span>
+            </h3>
+          </div>
           <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-24">
             <div className="flex-1 max-w-sm mx-auto text-center md:text-right group">
               <span className="inline-block px-4 py-1.5 rounded-full bg-escap-blue/5 text-escap-blue text-xs font-bold uppercase tracking-wider mb-5 transition-colors group-hover:bg-escap-blue/10">Pillar 6</span>
@@ -113,40 +115,40 @@ export function ChallengeSection() {
         {/* Solution Pipeline */}
         <div>
           <h3
-            className="text-2xl font-bold text-foreground mb-16 text-center"
+            className="text-2xl md:text-3xl font-bold text-foreground mb-20 text-center"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             The Solution: <span className="text-primary">HtmlRAG & Structural Intelligence</span>
           </h3>
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10 relative">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 relative max-w-5xl mx-auto">
             {/* Connecting line */}
-            <div className="hidden md:block absolute top-[28px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-primary/10 via-primary/50 to-primary/10 -z-10"></div>
+            <div className="hidden md:block absolute top-[48px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-primary/10 via-primary/50 to-primary/10 -z-10"></div>
 
             <div className="flex-1 flex flex-col items-center text-center group">
-              <div className="h-14 w-14 rounded-full bg-background shadow-[0_0_20px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
-                <Database className="h-6 w-6 text-primary" />
+              <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
+                <Database className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-xs font-bold text-primary mb-2 tracking-widest">MODULE A</span>
-              <h4 className="text-lg font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>Extraction</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[250px]">Detect passages with accurate source-grounded citations.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE A</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Extraction</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Detect passages with accurate source-grounded citations.</p>
             </div>
 
             <div className="flex-1 flex flex-col items-center text-center group">
-              <div className="h-14 w-14 rounded-full bg-background shadow-[0_0_20px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
-                <Tag className="h-6 w-6 text-primary" />
+              <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
+                <Tag className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-xs font-bold text-primary mb-2 tracking-widest">MODULE B</span>
-              <h4 className="text-lg font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>Classification</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[250px]">Assign provisions to appropriate policy categories.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE B</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Classification</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Assign provisions to appropriate policy categories.</p>
             </div>
 
             <div className="flex-1 flex flex-col items-center text-center group">
-              <div className="h-14 w-14 rounded-full bg-background shadow-[0_0_20px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
-                <FileText className="h-6 w-6 text-primary" />
+              <div className="h-24 w-24 rounded-full bg-background shadow-[0_0_30px_rgba(255,107,0,0.15)] border-2 border-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary/5 transition-all">
+                <FileText className="h-10 w-10 text-primary" />
               </div>
-              <span className="text-xs font-bold text-primary mb-2 tracking-widest">MODULE C</span>
-              <h4 className="text-lg font-bold text-foreground mb-3" style={{ fontFamily: "var(--font-heading)" }}>Summarization</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[250px]">Generate concise summaries for non-technical officials.</p>
+              <span className="text-sm font-bold text-primary mb-3 tracking-widest">MODULE C</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "var(--font-heading)" }}>Summarization</h4>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[300px]">Generate concise summaries for non-technical officials.</p>
             </div>
           </div>
         </div>

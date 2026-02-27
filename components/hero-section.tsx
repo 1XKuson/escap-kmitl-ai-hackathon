@@ -12,9 +12,9 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-background/80 dark:bg-background/90" />
 
       {/* Floating accent elements */}
-      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/5 blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-escap-blue/5 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-cmkl-crimson/3 blur-3xl" />
+      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/5 blur-3xl animate-float hidden md:block" />
+      <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-escap-blue/5 blur-3xl animate-float hidden md:block" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] md:h-[600px] w-[300px] md:w-[600px] rounded-full bg-cmkl-crimson/3 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Organizer badges */}
@@ -36,12 +36,13 @@ export function HeroSection() {
 
         {/* Main headline */}
         <h1
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 text-balance"
+          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 break-words"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Pioneering the
-          <br />
-          <span className="text-primary">AI Frontier</span>{" "}
+          <br className="hidden sm:block" />
+          <span className="text-primary"> AI Frontier</span>{" "}
+          <br className="sm:hidden" />
           in RegTech
         </h1>
 
@@ -83,21 +84,21 @@ export function HeroSection() {
         </p>
 
         {/* Partner logos */}
-        <div className="mt-16 flex items-center justify-center gap-10 md:gap-16 flex-wrap opacity-70">
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-70">
           <img
             src="/kmitl.png"
             alt="KMITL School of Engineering"
-            className="h-20 md:h-24 w-auto object-contain transition-all"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all"
           />
           <img
             src="/AW_ESCAP_LOGO_OFFICIAL.png"
             alt="UNESCAP"
-            className="h-16 md:h-20 w-auto object-contain transition-all"
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
           />
           <img
             src="/cmkl.png"
             alt="CMKL University"
-            className="h-16 md:h-20 w-auto object-contain transition-all"
+            className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
           />
         </div>
       </div>

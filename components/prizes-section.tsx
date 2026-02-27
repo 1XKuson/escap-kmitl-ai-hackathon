@@ -21,7 +21,7 @@ export function PrizesSection() {
         </div>
 
         {/* Prize podium */}
-        <div className="flex flex-col md:flex-row items-end justify-center gap-6 mb-24 min-h-[300px]">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-center gap-6 mb-24 min-h-[300px]">
           {/* 1st Runner Up */}
           <div className="w-full md:w-1/3 flex flex-col items-center order-2 md:order-1 pt-10">
             <h3 className="text-3xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>50,000 THB</h3>
