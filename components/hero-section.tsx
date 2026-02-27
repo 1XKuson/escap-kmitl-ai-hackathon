@@ -16,7 +16,7 @@ export function HeroSection({ dict }: { dict: any }) {
       <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-escap-blue/5 blur-3xl animate-float hidden md:block" style={{ animationDelay: "2s" }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] md:h-[600px] w-[300px] md:w-[600px] rounded-full bg-cmkl-crimson/3 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center mt-12 sm:mt-0">
         {/* Organizer badges */}
         <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">
           <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5">
