@@ -1,16 +1,25 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Target, Handshake, Eye, GraduationCap } from "lucide-react"
+import { getDictionary } from "@/get-dictionary"
+import { Locale, i18n } from "@/i18n.config"
 
 export const metadata = {
     title: "About Us | RegTech AI Hackathon 2026",
     description: "Learn more about the RegTech Structural Intelligence AI Hackathon initiative by UNESCAP and KMITL.",
 }
 
-export default function AboutPage() {
+export function generateStaticParams() {
+    return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
+export default async function AboutPage({ params }: { params: Promise<{ lang: Locale }> }) {
+    const { lang } = await params
+    const dict = await getDictionary(lang || 'en')
+
     return (
         <main className="min-h-screen bg-background">
-            <Navbar />
+            <Navbar dict={dict.navbar} />
 
             {/* Hero Header for About Page */}
             <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style={{
@@ -132,7 +141,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <Footer />
+            <Footer dict={dict.footer} />
         </main>
     )
 }

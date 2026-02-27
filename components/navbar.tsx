@@ -3,26 +3,30 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
+import { usePathname } from "next/navigation"
 
 import { LangSwitcher } from "./lang-switcher"
 
 export function Navbar({ dict }: { dict?: any }) {
   const [isOpen, setIsOpen] = useState(false)
 
+  const pathname = usePathname()
+  const lang = pathname?.startsWith('/th') ? 'th' : 'en'
+
   const navLinks = [
-    { label: dict?.about || "About", href: "/about" },
-    { label: dict?.challenge || "Challenge", href: "/#challenge" },
-    { label: dict?.timeline || "Timeline", href: "/#timeline" },
-    { label: dict?.prizes || "Prizes", href: "/#prizes" },
-    { label: dict?.teams || "Teams", href: "/#teams" },
-    { label: dict?.faq || "FAQ", href: "/#faq" },
+    { label: dict?.about || "About", href: `/${lang}/about` },
+    { label: dict?.challenge || "Challenge", href: `/${lang}/#challenge` },
+    { label: dict?.timeline || "Timeline", href: `/${lang}/#timeline` },
+    { label: dict?.prizes || "Prizes", href: `/${lang}/#prizes` },
+    { label: dict?.teams || "Teams", href: `/${lang}/#teams` },
+    { label: dict?.faq || "FAQ", href: `/${lang}/#faq` },
   ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="/" className="flex items-center gap-1 sm:gap-2 md:gap-4 min-w-0">
+          <a href={`/${lang}`} className="flex items-center gap-1 sm:gap-2 md:gap-4 min-w-0">
             <div className="flex items-center gap-1 sm:gap-1.5 md:gap-3 border-r border-border pr-2 md:pr-4 min-w-0">
               <img
                 src="/AW_ESCAP_LOGO_OFFICIAL.png"
@@ -65,7 +69,7 @@ export function Navbar({ dict }: { dict?: any }) {
               <LangSwitcher />
               <ThemeToggle />
               <a
-                href="#apply"
+                href={`/${lang}/#apply`}
                 className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
               >
                 {dict?.register || "Register Now"}
@@ -103,7 +107,7 @@ export function Navbar({ dict }: { dict?: any }) {
               </a>
             ))}
             <a
-              href="#apply"
+              href={`/${lang}/#apply`}
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 mt-2"
             >
