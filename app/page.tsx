@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/about-section"
 import { ChallengeSection } from "@/components/challenge-section"
 import { TimelineSection } from "@/components/timeline-section"
 import { PrizesSection } from "@/components/prizes-section"
+import { MentorsSection } from "@/components/mentors-section"
 import { TeamsSection } from "@/components/teams-section"
 import { ApplySection } from "@/components/apply-section"
 import { FaqSection } from "@/components/faq-section"
@@ -18,6 +19,7 @@ export default function Page() {
       <ChallengeSection />
       <TimelineSection />
       <PrizesSection />
+      <MentorsSection />
       <TeamsSection />
       <ApplySection />
       <FaqSection />
