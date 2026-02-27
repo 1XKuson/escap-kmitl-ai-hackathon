@@ -20,76 +20,75 @@ export function PrizesSection() {
           </p>
         </div>
 
-        {/* Prize cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* Winner */}
-          <div className="relative rounded-xl border-2 border-primary bg-card p-8 text-center md:order-2 md:-translate-y-4">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">
-              WINNER
+        {/* Prize podium */}
+        <div className="flex flex-col md:flex-row items-end justify-center gap-6 mb-24 min-h-[300px]">
+          {/* 1st Runner Up */}
+          <div className="w-full md:w-1/3 flex flex-col items-center order-2 md:order-1 pt-10">
+            <h3 className="text-3xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>50,000 THB</h3>
+            <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider font-semibold">1st Runner-Up</p>
+            <div className="w-full bg-secondary/80 rounded-t-2xl border-t-4 border-muted-foreground h-32 flex items-center justify-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Medal className="h-10 w-10 text-muted-foreground drop-shadow-md group-hover:-translate-y-2 transition-transform" />
             </div>
-            <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-primary/10 mb-4">
-              <Trophy className="h-8 w-8 text-primary" />
-            </div>
-            <h3 className="text-3xl font-bold text-primary mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              75,000 THB
-            </h3>
-            <p className="text-sm text-muted-foreground">Grand Champion</p>
           </div>
 
-          {/* 1st Runner Up */}
-          <div className="rounded-xl border border-border bg-card p-8 text-center md:order-1">
-            <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-secondary mb-4">
-              <Medal className="h-7 w-7 text-muted-foreground" />
+          {/* Winner */}
+          <div className="w-full md:w-1/3 flex flex-col items-center order-1 md:order-2 z-10">
+            <div className="rounded-full bg-primary/10 px-6 py-2 text-xs font-bold text-primary mb-5 backdrop-blur-md border border-primary/20 tracking-widest">
+              GRAND CHAMPION
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              50,000 THB
-            </h3>
-            <p className="text-sm text-muted-foreground">1st Runner-Up</p>
+            <h3 className="text-4xl md:text-5xl font-extrabold text-primary mb-2 drop-shadow-sm" style={{ fontFamily: "var(--font-heading)" }}>75,000 THB</h3>
+            <div className="w-full bg-primary/10 rounded-t-2xl border-t-4 border-primary h-48 flex flex-col items-center justify-start pt-8 relative overflow-hidden shadow-[0_-10px_40px_-15px_rgba(255,107,0,0.2)] group">
+              <div className="absolute inset-0 bg-gradient-to-t from-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Trophy className="h-16 w-16 text-primary drop-shadow-[0_0_15px_rgba(255,107,0,0.5)] mb-2 group-hover:-translate-y-2 group-hover:scale-110 transition-transform" />
+            </div>
           </div>
 
           {/* 2nd Runner Up */}
-          <div className="rounded-xl border border-border bg-card p-8 text-center md:order-3">
-            <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-secondary mb-4">
-              <Award className="h-7 w-7 text-muted-foreground" />
+          <div className="w-full md:w-1/3 flex flex-col items-center order-3 md:order-3 pt-16">
+            <h3 className="text-2xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>25,000 THB</h3>
+            <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider font-semibold">2nd Runner-Up</p>
+            <div className="w-full bg-secondary/60 rounded-t-2xl border-t-4 border-border h-24 flex items-center justify-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Award className="h-8 w-8 text-muted-foreground/70 drop-shadow-sm group-hover:-translate-y-2 transition-transform" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-              25,000 THB
-            </h3>
-            <p className="text-sm text-muted-foreground">2nd Runner-Up</p>
           </div>
         </div>
 
-        {/* Intangible benefits */}
-        <div className="rounded-xl border border-border bg-card p-8">
-          <h3 className="text-xl font-bold text-foreground mb-6 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+        {/* Intangible benefits - No bordered box */}
+        <div className="relative pt-16 mt-8">
+          {/* Subtle separator */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+          <h3 className="text-lg font-bold text-muted-foreground mb-12 text-center uppercase tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
             Beyond the Prize Money
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-escap-blue/10 mb-3">
-                <Sparkles className="h-6 w-6 text-escap-blue" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="flex flex-col items-center text-center group">
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-escap-blue/5 mb-6 rotate-3 group-hover:rotate-6 group-hover:bg-escap-blue/10 transition-all">
+                <Sparkles className="h-7 w-7 text-escap-blue" />
               </div>
-              <h4 className="text-sm font-bold text-foreground mb-1">UN Expert Mentorship</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Direct guidance from UN experts and top academic faculty.
+              <h4 className="text-lg font-bold text-foreground mb-2">UN Expert Mentorship</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Direct guidance from UN experts and top academic faculty to shape your real-world solution.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-3">
-                <Cloud className="h-6 w-6 text-primary" />
+            <div className="flex flex-col items-center text-center group">
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 mb-6 -rotate-3 group-hover:-rotate-6 group-hover:bg-primary/10 transition-all">
+                <Cloud className="h-7 w-7 text-primary" />
               </div>
-              <h4 className="text-sm font-bold text-foreground mb-1">SDG Contribution</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Direct contribution to Sustainable Development Goals.
+              <h4 className="text-lg font-bold text-foreground mb-2">SDG Contribution</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Directly contribute to global Sustainable Development Goals through functional technology.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cmkl-crimson/10 mb-3">
-                <Briefcase className="h-6 w-6 text-cmkl-crimson" />
+            <div className="flex flex-col items-center text-center group">
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-cmkl-crimson/5 mb-6 rotate-3 group-hover:rotate-6 group-hover:bg-cmkl-crimson/10 transition-all">
+                <Briefcase className="h-7 w-7 text-cmkl-crimson" />
               </div>
-              <h4 className="text-sm font-bold text-foreground mb-1">RegTech Exposure</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Exposure to the cutting edge of RegTech in the Asia-Pacific.
+              <h4 className="text-lg font-bold text-foreground mb-2">RegTech Exposure</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Gain immense exposure to the cutting edge of RegTech policies across the Asia-Pacific region.
               </p>
             </div>
           </div>

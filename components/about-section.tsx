@@ -48,23 +48,23 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cards.map((card) => (
+        {/* Minimalist grid without boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+          {cards.map((card, index) => (
             <div
               key={card.title}
-              className="group rounded-xl border border-border bg-card p-6 sm:p-8 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col items-start"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-5">
-                <card.icon className="h-6 w-6 text-primary" />
+              <div className={`flex h-16 w-16 items-center justify-center rounded-2xl mb-6 transition-transform group-hover:scale-110 ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-escap-blue/10 text-escap-blue'}`}>
+                <card.icon className="h-8 w-8" />
               </div>
               <h3
-                className="text-xl font-bold text-foreground mb-3"
+                className="text-2xl font-bold text-foreground mb-4"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {card.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed border-l-2 border-border pl-5 group-hover:border-primary transition-colors">
                 {card.description}
               </p>
             </div>
