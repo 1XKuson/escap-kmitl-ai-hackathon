@@ -1,0 +1,92 @@
+"use client"
+
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { ThemeToggle } from "./theme-toggle"
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Challenge", href: "#challenge" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Prizes", href: "#prizes" },
+  { label: "Teams", href: "#teams" },
+  { label: "FAQ", href: "#faq" },
+]
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <span className="text-lg font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+              RegTech AI
+            </span>
+            <span className="text-xs text-muted-foreground">Hackathon 2026</span>
+          </a>
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <a
+                href="#apply"
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
+              >
+                Register Now
+              </a>
+            </div>
+          </div>
+
+          {/* Mobile toggle */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
+          <div className="px-4 py-4 flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-sm text-muted-foreground py-2 transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#apply"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 mt-2"
+            >
+              Register Now
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}
