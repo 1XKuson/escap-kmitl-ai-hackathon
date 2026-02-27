@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
 
 export function FaqSection({ dict }: { dict: any }) {
   const faqs = [
@@ -37,7 +38,7 @@ export function FaqSection({ dict }: { dict: any }) {
   return (
     <section id="faq" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
             {dict.tagline}
           </p>
@@ -47,24 +48,27 @@ export function FaqSection({ dict }: { dict: any }) {
           >
             {dict.title}
           </h2>
-        </div>
+        </FadeIn>
 
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border-border"
-            >
-              <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <StaggerContainer>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <FadeInStaggerItem key={index}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-border"
+                >
+                  <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </FadeInStaggerItem>
+            ))}
+          </Accordion>
+        </StaggerContainer>
       </div>
     </section>
   )

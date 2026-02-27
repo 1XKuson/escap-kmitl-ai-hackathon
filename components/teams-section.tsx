@@ -1,10 +1,11 @@
 import { Code, Scale, Users } from "lucide-react"
+import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
 
 export function TeamsSection({ dict }: { dict: any }) {
   return (
     <section id="teams" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
             {dict.tagline}
           </p>
@@ -17,10 +18,10 @@ export function TeamsSection({ dict }: { dict: any }) {
           <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed">
             {dict.subtitle}
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="rounded-xl border border-border bg-card p-6 text-center">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <FadeInStaggerItem className="rounded-xl border border-border bg-card p-6 text-center">
             <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-primary/10 mb-4">
               <Code className="h-7 w-7 text-primary" />
             </div>
@@ -30,9 +31,9 @@ export function TeamsSection({ dict }: { dict: any }) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {dict.tech_desc}
             </p>
-          </div>
+          </FadeInStaggerItem>
 
-          <div className="rounded-xl border border-border bg-card p-6 text-center">
+          <FadeInStaggerItem className="rounded-xl border border-border bg-card p-6 text-center">
             <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-escap-blue/10 mb-4">
               <Scale className="h-7 w-7 text-escap-blue" />
             </div>
@@ -42,9 +43,9 @@ export function TeamsSection({ dict }: { dict: any }) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {dict.policy_desc}
             </p>
-          </div>
+          </FadeInStaggerItem>
 
-          <div className="rounded-xl border border-border bg-card p-6 text-center">
+          <FadeInStaggerItem className="rounded-xl border border-border bg-card p-6 text-center">
             <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-cmkl-crimson/10 mb-4">
               <Users className="h-7 w-7 text-cmkl-crimson" />
             </div>
@@ -54,8 +55,8 @@ export function TeamsSection({ dict }: { dict: any }) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {dict.members_desc}
             </p>
-          </div>
-        </div>
+          </FadeInStaggerItem>
+        </StaggerContainer>
       </div>
     </section>
   )

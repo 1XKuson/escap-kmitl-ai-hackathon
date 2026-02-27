@@ -1,4 +1,5 @@
 import { Target, Handshake, Eye, GraduationCap } from "lucide-react"
+import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
 
 export function AboutSection({ dict }: { dict: any }) {
   const cards = [
@@ -27,7 +28,7 @@ export function AboutSection({ dict }: { dict: any }) {
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
             {dict.tagline}
           </p>
@@ -40,12 +41,12 @@ export function AboutSection({ dict }: { dict: any }) {
           <p className="mx-auto max-w-2xl text-base text-muted-foreground leading-relaxed">
             {dict.subtitle}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Minimalist grid without boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {cards.map((card, index) => (
-            <div
+            <FadeInStaggerItem
               key={card.title}
               className="group flex flex-col items-start"
             >
@@ -61,9 +62,9 @@ export function AboutSection({ dict }: { dict: any }) {
               <p className="text-base text-muted-foreground leading-relaxed border-l-2 border-border pl-5 group-hover:border-primary transition-colors">
                 {card.description}
               </p>
-            </div>
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

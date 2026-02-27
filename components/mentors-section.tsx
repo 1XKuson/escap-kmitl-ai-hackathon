@@ -1,3 +1,5 @@
+import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
+
 export function MentorsSection({ dict }: { dict: any }) {
     const mentors = [
         {
@@ -33,7 +35,7 @@ export function MentorsSection({ dict }: { dict: any }) {
     return (
         <section id="mentors" className="relative py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <FadeIn className="text-center mb-16">
                     <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
                         {dict.tagline}
                     </p>
@@ -43,11 +45,11 @@ export function MentorsSection({ dict }: { dict: any }) {
                     >
                         {dict.title_1} <span className="text-primary">{dict.title_2}</span>
                     </h2>
-                </div>
+                </FadeIn>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-8">
+                <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-8">
                     {mentors.map((m) => (
-                        <div
+                        <FadeInStaggerItem
                             key={m.name}
                             className="group flex flex-col items-center text-center transition-all"
                         >
@@ -67,9 +69,9 @@ export function MentorsSection({ dict }: { dict: any }) {
                             </h3>
                             <p className="text-sm text-primary font-medium mb-1">{m.role}</p>
                             <span className="text-xs uppercase tracking-widest text-muted-foreground">{m.org}</span>
-                        </div>
+                        </FadeInStaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )

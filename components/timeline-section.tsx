@@ -1,4 +1,5 @@
 import { Rocket, Filter, Users, Award, Trophy } from "lucide-react"
+import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
 
 export function TimelineSection({ dict }: { dict: any }) {
   const timelineSteps = [
@@ -41,7 +42,7 @@ export function TimelineSection({ dict }: { dict: any }) {
   return (
     <section id="timeline" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-3">
             {dict.tagline}
           </p>
@@ -51,20 +52,20 @@ export function TimelineSection({ dict }: { dict: any }) {
           >
             {dict.title}
           </h2>
-        </div>
+        </FadeIn>
 
         {/* Desktop timeline */}
         <div className="hidden md:block relative">
           {/* Horizontal line */}
           <div className="absolute top-10 left-0 right-0 h-px bg-border" />
-          <div className="grid grid-cols-5 gap-4">
+          <StaggerContainer className="grid grid-cols-5 gap-4">
             {timelineSteps.map((step, index) => (
-              <div key={step.month} className="relative flex flex-col items-center text-center">
+              <FadeInStaggerItem key={step.month} className="relative flex flex-col items-center text-center">
                 {/* Dot on the line */}
                 <div
                   className={`relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 transition-all ${step.status === "active"
-                      ? "border-primary bg-primary/10"
-                      : "border-border bg-card"
+                    ? "border-primary bg-primary/10"
+                    : "border-border bg-card"
                     }`}
                 >
                   <step.icon
@@ -86,20 +87,20 @@ export function TimelineSection({ dict }: { dict: any }) {
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </FadeInStaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
 
         {/* Mobile timeline */}
-        <div className="md:hidden flex flex-col gap-6">
+        <StaggerContainer className="md:hidden flex flex-col gap-6">
           {timelineSteps.map((step, index) => (
-            <div key={step.month} className="flex gap-4">
+            <FadeInStaggerItem key={step.month} className="flex gap-4">
               <div className="flex flex-col items-center">
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-full border-2 shrink-0 ${step.status === "active"
-                      ? "border-primary bg-primary/10"
-                      : "border-border bg-card"
+                    ? "border-primary bg-primary/10"
+                    : "border-border bg-card"
                     }`}
                 >
                   <step.icon
@@ -120,9 +121,9 @@ export function TimelineSection({ dict }: { dict: any }) {
                   {step.description}
                 </p>
               </div>
-            </div>
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )
