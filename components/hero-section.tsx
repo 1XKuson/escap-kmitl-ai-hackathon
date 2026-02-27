@@ -87,17 +87,17 @@ export function HeroSection() {
           <img
             src="/kmitl.png"
             alt="KMITL School of Engineering"
-            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+            className="h-20 md:h-24 w-auto object-contain transition-all"
           />
           <img
             src="/AW_ESCAP_LOGO_OFFICIAL.png"
             alt="UNESCAP"
-            className="h-16 md:h-20 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+            className="h-16 md:h-20 w-auto object-contain transition-all"
           />
           <img
             src="/cmkl.png"
             alt="CMKL University"
-            className="h-16 md:h-20 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+            className="h-16 md:h-20 w-auto object-contain transition-all"
           />
         </div>
       </div>

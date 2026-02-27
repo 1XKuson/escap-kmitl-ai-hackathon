@@ -15,17 +15,17 @@ export function Footer() {
           <img
             src="/AW_ESCAP_LOGO_OFFICIAL.png"
             alt="UNESCAP - United Nations Economic and Social Commission for Asia and the Pacific"
-            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
+            className="h-20 md:h-24 w-auto object-contain transition-all opacity-80 hover:opacity-100"
           />
           <img
             src="/kmitl.png"
             alt="KMITL - King Mongkut's Institute of Technology Ladkrabang, School of Engineering"
-            className="h-24 md:h-28 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
+            className="h-24 md:h-28 w-auto object-contain transition-all opacity-80 hover:opacity-100"
           />
           <img
             src="/cmkl.png"
             alt="CMKL University"
-            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
+            className="h-20 md:h-24 w-auto object-contain transition-all opacity-80 hover:opacity-100"
           />
         </div>
       </div>

@@ -25,17 +25,17 @@ export function Navbar() {
               <img
                 src="/AW_ESCAP_LOGO_OFFICIAL.png"
                 alt="UNESCAP"
-                className="h-5 md:h-7 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                className="h-5 md:h-7 w-auto object-contain transition-all"
               />
               <img
                 src="/kmitl.png"
                 alt="KMITL"
-                className="h-6 md:h-8 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                className="h-6 md:h-8 w-auto object-contain transition-all"
               />
               <img
                 src="/cmkl.png"
                 alt="CMKL"
-                className="h-5 md:h-7 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                className="h-5 md:h-7 w-auto object-contain transition-all"
               />
             </div>
             <div className="flex flex-col">
