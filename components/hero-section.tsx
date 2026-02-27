@@ -2,7 +2,15 @@ import { ArrowRight, Calendar, Globe } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-16" style={{
+      backgroundImage: `url('/hero-bg.jpg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundBlendMode: 'overlay',
+    }}>
+      {/* Dark overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-background/80 dark:bg-background/90" />
+
       {/* Floating accent elements */}
       <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/5 blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-escap-blue/5 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
@@ -75,21 +83,21 @@ export function HeroSection() {
         </p>
 
         {/* Partner logos */}
-        <div className="mt-12 flex items-center justify-center gap-8 flex-wrap opacity-70">
+        <div className="mt-16 flex items-center justify-center gap-10 md:gap-16 flex-wrap opacity-70">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kmitl-zcqZyusNZZioINx71qHueiMYVoC6MY.png"
+            src="/kmitl.png"
             alt="KMITL School of Engineering"
-            className="h-14 w-auto object-contain brightness-0 invert"
+            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all"
           />
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/escap-lU8jZgj9y1U0GzapwErtX9RVNdI4rz.jpg"
+            src="/AW_ESCAP_LOGO_OFFICIAL.png"
             alt="UNESCAP"
-            className="h-12 w-auto object-contain brightness-0 invert"
+            className="h-16 md:h-20 w-auto object-contain dark:brightness-0 dark:invert transition-all"
           />
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cmkl-sGqxovtEdtr0ydFu6jkBBZhPB7XQqL.png"
+            src="/cmkl.png"
             alt="CMKL University"
-            className="h-12 w-auto object-contain brightness-0 invert"
+            className="h-16 md:h-20 w-auto object-contain dark:brightness-0 dark:invert transition-all"
           />
         </div>
       </div>

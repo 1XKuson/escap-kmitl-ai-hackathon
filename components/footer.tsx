@@ -11,21 +11,21 @@ export function Footer() {
         >
           Partners & Organizers
         </h3>
-        <div className="flex items-center justify-center gap-12 flex-wrap">
+        <div className="flex items-center justify-center gap-16 md:gap-24 flex-wrap">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/escap-lU8jZgj9y1U0GzapwErtX9RVNdI4rz.jpg"
+            src="/AW_ESCAP_LOGO_OFFICIAL.png"
             alt="UNESCAP - United Nations Economic and Social Commission for Asia and the Pacific"
-            className="h-14 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
           />
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kmitl-zcqZyusNZZioINx71qHueiMYVoC6MY.png"
+            src="/kmitl.png"
             alt="KMITL - King Mongkut's Institute of Technology Ladkrabang, School of Engineering"
-            className="h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+            className="h-24 md:h-28 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
           />
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cmkl-sGqxovtEdtr0ydFu6jkBBZhPB7XQqL.png"
+            src="/cmkl.png"
             alt="CMKL University"
-            className="h-14 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+            className="h-20 md:h-24 w-auto object-contain dark:brightness-0 dark:invert transition-all opacity-80 hover:opacity-100"
           />
         </div>
       </div>

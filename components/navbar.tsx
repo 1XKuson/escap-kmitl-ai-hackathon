@@ -20,11 +20,32 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-lg font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
-              RegTech AI
-            </span>
-            <span className="text-xs text-muted-foreground">Hackathon 2026</span>
+          <a href="#" className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-center gap-2 md:gap-3 border-r border-border pr-3 md:pr-4">
+              <img
+                src="/AW_ESCAP_LOGO_OFFICIAL.png"
+                alt="UNESCAP"
+                className="h-5 md:h-7 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+              />
+              <img
+                src="/kmitl.png"
+                alt="KMITL"
+                className="h-6 md:h-8 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+              />
+              <img
+                src="/cmkl.png"
+                alt="CMKL"
+                className="h-5 md:h-7 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm md:text-base font-bold text-primary leading-tight" style={{ fontFamily: "var(--font-heading)" }}>
+                RegTech AI
+              </span>
+              <span className="text-[10px] md:text-xs text-muted-foreground leading-tight hidden sm:block">
+                Hackathon 2026
+              </span>
+            </div>
           </a>
 
           {/* Desktop nav */}
