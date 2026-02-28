@@ -3,28 +3,28 @@ import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-i
 export function MentorsSection({ dict }: { dict: any }) {
     const mentors = [
         {
-            img: "/placeholder-user.jpg",
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/placeholder-user.jpg`,
             name: "Dr. Somchai Prasert",
             role: "AI Research Director",
             org: "KMITL",
             borderColor: "border-primary"
         },
         {
-            img: "/placeholder-user.jpg",
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/placeholder-user.jpg`,
             name: "Prof. Amara Tanaka",
             role: "Digital Trade Policy Lead",
             org: "UNESCAP",
             borderColor: "border-accent"
         },
         {
-            img: "/placeholder-user.jpg",
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/placeholder-user.jpg`,
             name: "Dr. Marcus Weber",
             role: "NLP & RegTech Specialist",
             org: "CMKL University",
             borderColor: "border-[#1A1A1A] dark:border-secondary" // Replaced border-secondary with something visible in light
         },
         {
-            img: "/placeholder-user.jpg",
+            img: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/placeholder-user.jpg`,
             name: "Dr. Priya Chakrabarti",
             role: "Data Governance Expert",
             org: "UNESCAP",

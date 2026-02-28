@@ -23,7 +23,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: Lo
 
             {/* Hero Header for About Page */}
             <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style={{
-                backgroundImage: `url('/hero-bg.jpg')`,
+                backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/hero-bg.jpg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundBlendMode: 'overlay',
@@ -83,14 +83,14 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: Lo
 
                             <div className="grid md:grid-cols-2 gap-6 mt-8">
                                 <div className="bg-card border border-border rounded-xl p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:-translate-y-1">
-                                    <img src="/AW_ESCAP_LOGO_OFFICIAL.png" alt="UNESCAP" className="h-12 mb-4" />
+                                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`} alt="UNESCAP" className="h-12 mb-4" />
                                     <h3 className="text-xl font-bold mb-3 text-foreground">UNESCAP</h3>
                                     <p className="text-muted-foreground text-base">
                                         Provides the policy leadership, regional mandate, and international development networks essential for this initiative. They bring deep expertise in digital trade policy frameworks, specifically the Regional Digital Trade Integration Index (RDTII), to form the project's policy architecture.
                                     </p>
                                 </div>
                                 <div className="bg-card border border-border rounded-xl p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:-translate-y-1">
-                                    <img src="/kmitl.png" alt="KMITL" className="h-12 mb-4" />
+                                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`} alt="KMITL" className="h-12 mb-4" />
                                     <h3 className="text-xl font-bold mb-3 text-foreground">KMITL</h3>
                                     <p className="text-muted-foreground text-base">
                                         Recognized as one of Thailand's leading institutions in engineering, artificial intelligence, and data science. They provide the technical infrastructure, research leadership, and access to the innovation ecosystem needed to translate cutting-edge AI methods into practical solutions.

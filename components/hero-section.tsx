@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Globe } from "lucide-react"
 export function HeroSection({ dict }: { dict: any }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-16" style={{
-      backgroundImage: `url('/hero-bg.jpg')`,
+      backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/hero-bg.jpg')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundBlendMode: 'overlay',
@@ -85,17 +85,17 @@ export function HeroSection({ dict }: { dict: any }) {
         {/* Partner logos */}
         <div className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-70">
           <img
-            src="/kmitl.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
             alt="KMITL School of Engineering"
             className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all"
           />
           <img
-            src="/AW_ESCAP_LOGO_OFFICIAL.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`}
             alt="UNESCAP"
             className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
           />
           <img
-            src="/cmkl.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/cmkl.png`}
             alt="CMKL University"
             className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
           />
