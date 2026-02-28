@@ -1,7 +1,46 @@
+"use client"
+
 import { ArrowRight, FileText, Video } from "lucide-react"
 import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
+import { useState, useEffect } from "react"
 
 export function ApplySection({ dict }: { dict: any }) {
+  const [isMounted, setIsMounted] = useState(false)
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
+
+  useEffect(() => {
+    setIsMounted(true)
+    const targetDate = new Date(process.env.NEXT_PUBLIC_END_DATE || "2026-02-01").getTime()
+
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime()
+      const distance = targetDate - now
+
+      if (distance < 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+      }
+
+      return {
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      }
+    }
+
+    setTimeLeft(calculateTimeLeft())
+
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft())
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
   return (
     <section id="apply" className="relative py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -15,9 +54,36 @@ export function ApplySection({ dict }: { dict: any }) {
           >
             {dict.title}
           </h2>
-          <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed">
+          <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed mb-10">
             {dict.subtitle}
           </p>
+
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8">
+            <div className="flex flex-col items-center justify-center p-4 bg-card border border-border rounded-xl min-w-[80px] sm:min-w-[100px] shadow-sm">
+              <span className="text-3xl sm:text-4xl font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+                {isMounted ? timeLeft.days.toString().padStart(2, '0') : '00'}
+              </span>
+              <span className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider mt-1 font-medium">Days</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-card border border-border rounded-xl min-w-[80px] sm:min-w-[100px] shadow-sm">
+              <span className="text-3xl sm:text-4xl font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+                {isMounted ? timeLeft.hours.toString().padStart(2, '0') : '00'}
+              </span>
+              <span className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider mt-1 font-medium">Hours</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-card border border-border rounded-xl min-w-[80px] sm:min-w-[100px] shadow-sm">
+              <span className="text-3xl sm:text-4xl font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+                {isMounted ? timeLeft.minutes.toString().padStart(2, '0') : '00'}
+              </span>
+              <span className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider mt-1 font-medium">Mins</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-card border border-border rounded-xl min-w-[80px] sm:min-w-[100px] shadow-sm">
+              <span className="text-3xl sm:text-4xl font-bold text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+                {isMounted ? timeLeft.seconds.toString().padStart(2, '0') : '00'}
+              </span>
+              <span className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider mt-1 font-medium">Secs</span>
+            </div>
+          </div>
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
