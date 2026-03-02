@@ -1,7 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { ThemeToggle } from "./theme-toggle"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
@@ -57,17 +63,48 @@ export function Navbar({ dict }: { dict?: any }) {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-primary"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <Link href={`/${lang}/about`} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+              {dict?.about || "About"}
+            </Link>
+            <Link href={`/${lang}/announcement`} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+              {dict?.announcement || "Announcements"}
+            </Link>
+
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-primary outline-hidden">
+                {lang === 'th' ? "ดูเพิ่มเติม" : "Explore"} <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href={`/${lang}/#challenge`} className="w-full cursor-pointer">
+                    {dict?.challenge || "Challenge"}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/${lang}/#timeline`} className="w-full cursor-pointer">
+                    {dict?.timeline || "Timeline"}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/${lang}/#prizes`} className="w-full cursor-pointer">
+                    {dict?.prizes || "Prizes"}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/${lang}/#teams`} className="w-full cursor-pointer">
+                    {dict?.teams || "Teams"}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/${lang}/#faq`} className="w-full cursor-pointer">
+                    {dict?.faq || "FAQ"}
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <div className="flex items-center gap-3 xl:gap-4">
               <LangSwitcher />
               <ThemeToggle />
               <Link
@@ -80,7 +117,7 @@ export function Navbar({ dict }: { dict?: any }) {
           </div>
 
           {/* Mobile toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <LangSwitcher />
             <ThemeToggle />
             <button
@@ -96,7 +133,7 @@ export function Navbar({ dict }: { dict?: any }) {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
+        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border">
           <div className="px-4 py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
