@@ -5,7 +5,7 @@ import { getDictionary } from "@/get-dictionary"
 import { Locale, i18n } from "@/i18n.config"
 
 export const metadata = {
-    title: "About Us | RegTech AI Hackathon 2026",
+    title: "About Us | Using AI for Digital Trade Regulatory Analysis",
     description: "Learn more about the RegTech Structural Intelligence AI Hackathon initiative by UNESCAP and KMITL.",
 }
 
