@@ -16,6 +16,7 @@ export function Navbar({ dict }: { dict?: any }) {
 
   const navLinks = [
     { label: dict?.about || "About", href: `/${lang}/about` },
+    { label: dict?.announcement || "Announcements", href: `/${lang}/announcement` },
     { label: dict?.challenge || "Challenge", href: `/${lang}/#challenge` },
     { label: dict?.timeline || "Timeline", href: `/${lang}/#timeline` },
     { label: dict?.prizes || "Prizes", href: `/${lang}/#prizes` },
