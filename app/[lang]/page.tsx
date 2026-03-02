@@ -34,7 +34,8 @@ export default async function Page({ params }: PageProps) {
             <ChallengeSection dict={dict.challenge} />
             <TimelineSection dict={dict.timeline} />
             <PrizesSection dict={dict.prizes} />
-            <MentorsSection dict={dict.mentors} />
+            {/* comment for mentors section for update in future */}
+            {/* <MentorsSection dict={dict.mentors} /> */}
             <TeamsSection dict={dict.teams} />
             <ApplySection dict={dict.apply} />
             <FaqSection dict={dict.faq} />
