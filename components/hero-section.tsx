@@ -83,7 +83,7 @@ export function HeroSection({ dict }: { dict: any }) {
         </p>
 
         {/* Partner logos */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-70">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-70">
           <img
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
             alt="KMITL School of Engineering"

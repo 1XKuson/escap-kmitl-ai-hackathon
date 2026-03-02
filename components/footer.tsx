@@ -1,5 +1,6 @@
 import { Mail, Globe } from "lucide-react"
 import { FadeIn, StaggerContainer, FadeInStaggerItem } from "@/components/fade-in"
+import { PartnerLogos } from "./partner-logos"
 
 export function Footer({ dict }: { dict: any }) {
   return (
@@ -12,29 +13,7 @@ export function Footer({ dict }: { dict: any }) {
         >
           {dict.partners}
         </h3>
-        <StaggerContainer className="flex items-center justify-center gap-16 md:gap-24 flex-wrap">
-          <FadeInStaggerItem>
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`}
-              alt="UNESCAP - United Nations Economic and Social Commission for Asia and the Pacific"
-              className="h-20 md:h-24 w-auto object-contain transition-all opacity-80 hover:opacity-100"
-            />
-          </FadeInStaggerItem>
-          <FadeInStaggerItem>
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
-              alt="KMITL - King Mongkut's Institute of Technology Ladkrabang, School of Engineering"
-              className="h-24 md:h-28 w-auto object-contain transition-all opacity-80 hover:opacity-100"
-            />
-          </FadeInStaggerItem>
-          <FadeInStaggerItem>
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/cmkl.png`}
-              alt="CMKL University"
-              className="h-20 md:h-24 w-auto object-contain transition-all opacity-80 hover:opacity-100"
-            />
-          </FadeInStaggerItem>
-        </StaggerContainer>
+        <PartnerLogos />
       </FadeIn>
 
       {/* Footer bottom */}
