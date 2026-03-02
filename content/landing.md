@@ -6,7 +6,7 @@ Here is the content for the hackathon website in English, formatted as plain tex
 **Organized by:** United Nations Economic and Social Commission for Asia and the Pacific (UNESCAP) and King Mongkut's Institute of Technology Ladkrabang (KMITL)
 
 **[Button: Register Team & Download Datasets]**
-Contact us: hackathon@unescap.org
+Contact us: regtech2026@kmitl.ac.th
 
 ***
 

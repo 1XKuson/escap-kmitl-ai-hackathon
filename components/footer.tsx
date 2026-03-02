@@ -52,11 +52,11 @@ export function Footer({ dict }: { dict: any }) {
 
             <div className="flex items-center gap-6">
               <a
-                href="mailto:hackathon@unescap.org"
+                href="mailto:regtech2026@kmitl.ac.th"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                hackathon@unescap.org
+                regtech2026@kmitl.ac.th
               </a>
               <a
                 href="https://www.unescap.org"

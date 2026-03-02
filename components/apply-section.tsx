@@ -120,7 +120,9 @@ export function ApplySection({ dict }: { dict: any }) {
 
         <FadeIn className="text-center">
           <a
-            href="mailto:hackathon@unescap.org"
+            href="https://www.jotform.com/form/260591342899065"
+            target="_blank"
+            rel="noopener noreferrer"
             className="glow-pulse inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-primary-foreground transition-all hover:brightness-110"
           >
             {dict.btn}
@@ -128,8 +130,8 @@ export function ApplySection({ dict }: { dict: any }) {
           </a>
           <p className="mt-4 text-xs text-muted-foreground">
             {dict.contact}{" "}
-            <a href="mailto:hackathon@unescap.org" className="text-escap-blue hover:underline">
-              hackathon@unescap.org
+            <a href="mailto:regtech2026@kmitl.ac.th" className="text-escap-blue hover:underline">
+              regtech2026@kmitl.ac.th
             </a>
           </p>
         </FadeIn>

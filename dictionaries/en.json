@@ -6,7 +6,7 @@
         "prizes": "Prizes",
         "teams": "Teams",
         "faq": "FAQ",
-        "register": "Register Now"
+        "register": "Apply Now"
     },
     "hero": {
         "tagline": "AI Hackathon 2026",
@@ -15,7 +15,7 @@
         "title_3": "Regulatory Analysis",
         "subtitle": "Bridging the Governance Gap in Digital Trade & Sustainable Development. Build AI tools that transform how governments monitor complex regulations.",
         "date": "March - September 2026",
-        "btn_register": "Register Team & Download Datasets",
+        "btn_register": "Apply Now",
         "btn_learn": "Learn More",
         "contact": "Contact us:"
     },
@@ -127,7 +127,7 @@
         "video_title": "7-Minute Video",
         "video_desc": "Explain the problem context and your solution concept. Showcase your team and their expertise.",
         "video_format": "Video Presentation - In English",
-        "btn": "Register Team & Download Datasets",
+        "btn": "Apply Now",
         "contact": "Contact us at"
     },
     "faq": {

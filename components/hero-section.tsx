@@ -77,8 +77,8 @@ export function HeroSection({ dict }: { dict: any }) {
         {/* Contact */}
         <p className="mt-8 text-xs text-muted-foreground">
           Contact us:{" "}
-          <a href="mailto:hackathon@unescap.org" className="text-escap-blue hover:underline">
-            hackathon@unescap.org
+          <a href="mailto:regtech2026@kmitl.ac.th" className="text-escap-blue hover:underline">
+            regtech2026@kmitl.ac.th
           </a>
         </p>
 
