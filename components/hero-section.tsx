@@ -2,7 +2,7 @@ import { ArrowRight, Calendar, Globe } from "lucide-react"
 
 export function HeroSection({ dict }: { dict: any }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-16" style={{
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-bg pt-32 pb-16 sm:pt-40 sm:pb-24" style={{
       backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/hero-bg.jpg')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -17,18 +17,12 @@ export function HeroSection({ dict }: { dict: any }) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] md:h-[600px] w-[300px] md:w-[600px] rounded-full bg-cmkl-crimson/3 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center mt-12 sm:mt-0">
-        {/* Organizer badges */}
-        <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">
-          <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5">
-            <Globe className="h-4 w-4 text-escap-blue" />
-            <span className="text-xs text-muted-foreground">UNESCAP</span>
-          </div>
-          <span className="text-muted-foreground text-xs">x</span>
-          <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5">
-            <span className="text-xs text-primary font-semibold">KMITL</span>
-          </div>
-        </div>
-
+        {/* UN logo */}
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/UN.png`}
+          alt="UN"
+          className="mx-auto block mb-8 h-16 sm:h-20 md:h-24 w-auto object-contain transition-all hover:scale-105"
+        />
         {/* Tagline */}
         <p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-6">
           {dict.tagline}
@@ -83,22 +77,84 @@ export function HeroSection({ dict }: { dict: any }) {
         </p>
 
         {/* Partner logos */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-70">
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
-            alt="KMITL School of Engineering"
-            className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all"
-          />
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`}
-            alt="UNESCAP"
-            className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
-          />
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/cmkl.png`}
-            alt="CMKL University"
-            className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all"
-          />
+        <div className="mt-4 mb-4 flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-6xl mx-auto px-4 overflow-hidden">
+          {/* Row 1: International Organizations */}
+          <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-6 md:gap-10 w-full">
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`}
+              alt="ESCAP"
+              className="h-8 sm:h-12 md:h-16 lg:h-20 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/ECLAC.png`}
+              alt="ECLAC"
+              className="h-6 sm:h-10 md:h-14 lg:h-16 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/UNECA.png`}
+              alt="UNECA"
+              className="h-7 sm:h-10 md:h-14 lg:h-16 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/UNCTAD_Master_Logo_Blue.png`}
+              alt="UNCTAD"
+              className="h-6 sm:h-9 md:h-12 lg:h-16 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/World_Trade_Organization_(logo_and_wordmark).svg.png`}
+              alt="World Trade Organization"
+              className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/WORLD_BANK.webp`}
+              alt="The World Bank"
+              className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+          </div>
+
+          {/* Row 2: Universities and Institutes */}
+          <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-4 md:gap-8 w-full">
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
+              alt="KMITL School of Engineering"
+              className="h-8 sm:h-12 md:h-16 lg:h-20 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/cmkl.png`}
+              alt="CMKL University"
+              className="h-4 sm:h-7 md:h-10 lg:h-12 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/smu-logo-tangram.png`}
+              alt="SMU"
+              className="h-6 sm:h-10 md:h-14 lg:h-16 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/university-of-birmingham-logo.jpg`}
+              alt="University of Birmingham"
+              className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Glasgow.jpg`}
+              alt="University of Glasgow"
+              className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/LOGO-EUI.png`}
+              alt="EUI"
+              className="h-4 sm:h-7 md:h-10 lg:h-12 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/UQ.png`}
+              alt="The University of Queensland"
+              className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/APRU.jpg`}
+              alt="APRU"
+              className="h-4 sm:h-7 md:h-10 lg:h-12 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
+            />
+          </div>
         </div>
       </div>
     </section>
