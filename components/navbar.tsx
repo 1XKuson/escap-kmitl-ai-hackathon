@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Home } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,23 +34,9 @@ export function Navbar({ dict }: { dict?: any }) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href={`/${lang}`} className="flex items-center gap-1 sm:gap-2 md:gap-4 min-w-0">
-            <div className="flex items-center gap-1 sm:gap-1.5 md:gap-3 border-r border-border pr-2 md:pr-4 min-w-0">
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AW_ESCAP_LOGO_OFFICIAL.png`}
-                alt="UNESCAP"
-                className="h-4 sm:h-5 md:h-7 w-auto object-contain transition-all"
-              />
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/kmitl.png`}
-                alt="KMITL"
-                className="h-5 sm:h-6 md:h-8 w-auto object-contain transition-all"
-              />
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/cmkl.png`}
-                alt="CMKL"
-                className="h-4 sm:h-5 md:h-7 w-auto object-contain transition-all"
-              />
+          <Link href={`/${lang}`} className="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 group text-muted-foreground hover:text-primary transition-colors" aria-label={dict?.home || "Home"}>
+            <div className="flex items-center border-r border-border pr-2 md:pr-4 min-w-0">
+              <Home className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
             <div className="flex flex-col">
               <span className="text-[11px] sm:text-sm md:text-base font-bold text-primary leading-tight truncate" style={{ fontFamily: "var(--font-heading)" }}>
