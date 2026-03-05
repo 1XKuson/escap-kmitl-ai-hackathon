@@ -106,7 +106,7 @@ export function HeroSection({ dict }: { dict: any }) {
               className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/WORLD_BANK.webp`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/worldbank.jpg`}
               alt="The World Bank"
               className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
