@@ -18,7 +18,7 @@ export function PartnerLogos() {
             {/* Row 2: Organization and University */}
             <div className="flex flex-col items-center gap-6">
                 <h3 className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-widest text-center">
-                    Organization and University
+                    In Partnership with
                 </h3>
                 <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16">
                     <img
@@ -31,9 +31,6 @@ export function PartnerLogos() {
 
             {/* Row 3: Private Sectors */}
             <div className="flex flex-col items-center gap-6">
-                <h3 className="text-xs sm:text-sm font-semibold text-muted-foreground uppercase tracking-widest text-center">
-                    Private Sectors
-                </h3>
                 <div className="flex flex-wrap items-center justify-center min-h-[60px] md:min-h-[80px]">
                     {/* Empty for now as requested */}
                 </div>

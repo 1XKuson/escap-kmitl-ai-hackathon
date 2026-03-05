@@ -125,7 +125,7 @@ export function HeroSection({ dict }: { dict: any }) {
               className="h-4 sm:h-7 md:h-10 lg:h-12 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/smu-logo-tangram.png`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/smu.jpg`}
               alt="SMU"
               className="h-6 sm:h-10 md:h-14 lg:h-16 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
@@ -135,7 +135,7 @@ export function HeroSection({ dict }: { dict: any }) {
               className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Glasgow.jpg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Uni_Glasgow_1.jpg`}
               alt="University of Glasgow"
               className="h-6 sm:h-9 md:h-12 lg:h-14 w-auto min-w-0 flex-1 object-contain transition-all hover:scale-105"
             />
